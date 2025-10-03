@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>انتخاب برنامه برای باز کردن مکان</title>
+  <style>
+    body{font-family:system-ui;padding:18px;background:#f7f9fc;color:#0b1220;direction:rtl;}
+    .card{max-width:720px;margin:18px auto;background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(15,23,42,0.06);}
+    h1{font-size:20px;margin:0 0 8px;}
+    p{margin:6px 0 14px;color:#394048;}
+    .btn{display:block;width:100%;padding:12px 14px;margin:10px 0;border-radius:10px;text-align:center;text-decoration:none;color:#fff;font-weight:600;cursor:pointer;}
+    .g {background:#2b7de9;}
+    .b {background:#0b9b5f;}
+    .n {background:#ff6b00;}
+    .w {background:#23a7a6;}
+    .a {background:#111;}
+    .browser {background:#6b7280;}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+    @media (max-width:420px){.row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>انتخاب برنامه برای باز کردن مکان</h1>
+    <p>روی یکی از گزینه‌ها کلیک کنید:</p>
+
+    <div style="margin-top:12px">
+      <a id="btnBalad" class="btn b">باز کردن در بلد</a>
+      <a id="btnNashan" class="btn n">باز کردن در نشان</a>
+      <div class="row">
+        <a id="btnGoogle" class="btn g">باز کردن در Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const urls = {
+      balad: "https://balad.ir/location?latitude=29.779615&longitude=52.421308&zoom=16.500000",
+      nashan: "https://nshn.ir/7bgUUVNFSTJX",
+      google: "https://maps.app.goo.gl/N371BE4J1u7r9voR7?g_st=ipc"
+    };
+
+    document.getElementById("btnBalad").onclick = ()=> window.location = urls.balad;
+    document.getElementById("btnNashan").onclick = ()=> window.location = urls.nashan;
+    document.getElementById("btnGoogle").onclick = ()=> window.location = urls.google;
+  </script>
+</body>
+</html>
